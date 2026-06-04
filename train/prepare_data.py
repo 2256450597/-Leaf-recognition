@@ -29,7 +29,17 @@ CROP_MAP = {
         "Corn_(maize)___healthy",
         "Corn_(maize)___Northern_Leaf_Blight",
     ],
-    "potato":  ["Potato___Early_blight", "Potato___healthy", "Potato___Late_blight"],
+    "potato":  [
+        "Potato___Bacteria",
+        "Potato___Early_blight",
+        "Potato___Fungi",
+        "Potato___healthy",
+        "Potato___Late_blight",
+        "Potato___Nematode",
+        "Potato___Pest",
+        "Potato___Phytopthora",
+        "Potato___Virus",
+    ],
 }
 
 
@@ -72,7 +82,10 @@ def prepare_stage2():
         elif crop == "corn":
             label_dirs = ["common_rust", "gray_leaf_spot", "healthy", "northern_leaf_blight"]
         else:
-            label_dirs = ["early_blight", "healthy", "late_blight"]
+            label_dirs = [
+                "bacteria", "early_blight", "fungi", "healthy", "late_blight",
+                "nematode", "pest", "phytopthora", "virus",
+            ]
 
         for split in ["train", "val"]:
             for label_dir in label_dirs:

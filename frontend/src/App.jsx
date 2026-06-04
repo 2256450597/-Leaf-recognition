@@ -157,7 +157,7 @@ export default function App() {
           <StatCard icon={<Icons.BarChart />} label="累计检测" value={history.length} unit="次" accent="blue" />
           <StatCard icon={<Icons.Check />} label="健康样本" value={healthyCount} unit="张" accent="green" />
           <StatCard icon={<Icons.AlertTriangle />} label="病害样本" value={diseasedCount} unit="张" accent="red" />
-          <StatCard icon={<Icons.Leaf />} label="病害种类" value="17" unit="种" accent="green" />
+          <StatCard icon={<Icons.Leaf />} label="病害种类" value="23" unit="种" accent="green" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

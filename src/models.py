@@ -29,7 +29,7 @@ class CropDiseasePipeline:
             self.disease_models[crop_key] = YOLO(MODEL_PATHS[weight_key])
 
         self._loaded = True
-        print("All 4 models loaded (17 disease classes supported).")
+        print("All 4 models loaded (23 disease classes supported).")
 
     def predict(self, image_path: str) -> dict:
         """对单张图片执行两阶段推理，返回作物+病害双层结果"""
@@ -58,7 +58,10 @@ class CropDiseasePipeline:
         elif crop_key == "corn":
             disease_map = {0: "common_rust", 1: "gray_leaf_spot", 2: "healthy", 3: "northern_leaf_blight"}
         else:
-            disease_map = {0: "early_blight", 1: "healthy", 2: "late_blight"}
+            disease_map = {
+                0: "bacteria", 1: "early_blight", 2: "fungi", 3: "healthy",
+                4: "late_blight", 5: "nematode", 6: "pest", 7: "phytopthora", 8: "virus",
+            }
         disease_key = disease_map[disease_idx]
 
         return {

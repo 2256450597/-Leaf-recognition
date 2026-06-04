@@ -21,7 +21,10 @@ DISEASE_CLASSES = {
         "target_spot", "tomato_mosaic_virus", "tomato_yellow_leaf_curl_virus",
     ],
     "corn":    ["common_rust", "gray_leaf_spot", "healthy", "northern_leaf_blight"],
-    "potato":  ["early_blight", "healthy", "late_blight"],
+    "potato":  [
+        "bacteria", "early_blight", "fungi", "healthy", "late_blight",
+        "nematode", "pest", "phytopthora", "virus",
+    ],
 }
 
 DISEASE_LABELS = {
@@ -38,6 +41,12 @@ DISEASE_LABELS = {
     "common_rust":          "普通锈病",
     "gray_leaf_spot":       "灰斑病",
     "northern_leaf_blight": "北方叶枯病",
+    "bacteria":             "细菌性病害",
+    "fungi":                "真菌性病害",
+    "nematode":             "线虫病",
+    "pest":                 "虫害",
+    "phytopthora":          "晚疫病(疫霉)",
+    "virus":                "病毒性病害",
 }
 
 # 模型权重路径
