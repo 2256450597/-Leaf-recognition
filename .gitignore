@@ -1,0 +1,30 @@
+# 输出集：数据集
+PlantVillage_raw/
+data/
+
+# 输出集：模型权重
+weights/
+yolov8n-cls.pt
+
+# 输出集：训练产物
+runs/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+env/
+env_mount/
+conda_env.sparsebundle.sparseimage
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDE / Claude
+.claude/
+.DS_Store
+*.swp
+*.swo
+._*
