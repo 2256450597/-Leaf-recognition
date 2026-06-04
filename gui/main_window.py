@@ -102,7 +102,7 @@ class MainWindow(QMainWindow):
     def _load_models(self):
         try:
             self.pipeline.load_models()
-            QMessageBox.information(self, "就绪", "4 个模型已加载完成，可以开始检测。")
+            QMessageBox.information(self, "就绪", "4 个模型已加载（支持 17 种病害识别），可以开始检测。")
         except FileNotFoundError as e:
             QMessageBox.warning(self, "警告", f"模型文件未找到:\n{e}\n请先完成训练。")
 

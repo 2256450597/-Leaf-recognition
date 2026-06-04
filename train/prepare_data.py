@@ -11,9 +11,25 @@ RANDOM_SEED = 42
 
 # 要处理的作物及其病害映射
 CROP_MAP = {
-    "tomato":  ["Tomato___healthy", "Tomato___Early_blight", "Tomato___Late_blight"],
-    "corn":    ["Corn_(maize)___healthy", "Corn_(maize)___Northern_Leaf_Blight", "Corn_(maize)___Common_rust_"],
-    "potato":  ["Potato___healthy", "Potato___Early_blight", "Potato___Late_blight"],
+    "tomato":  [
+        "Tomato___Bacterial_spot",
+        "Tomato___Early_blight",
+        "Tomato___healthy",
+        "Tomato___Late_blight",
+        "Tomato___Leaf_Mold",
+        "Tomato___Septoria_leaf_spot",
+        "Tomato___Spider_mites Two-spotted_spider_mite",
+        "Tomato___Target_Spot",
+        "Tomato___Tomato_mosaic_virus",
+        "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    ],
+    "corn":    [
+        "Corn_(maize)___Common_rust_",
+        "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+        "Corn_(maize)___healthy",
+        "Corn_(maize)___Northern_Leaf_Blight",
+    ],
+    "potato":  ["Potato___Early_blight", "Potato___healthy", "Potato___Late_blight"],
 }
 
 
@@ -47,10 +63,16 @@ def prepare_stage2():
     """Stage 2: 病害分类数据 — 每种作物单独组织"""
     for crop, dirs in CROP_MAP.items():
         stage2_dir = os.path.join(OUTPUT_DIR, f"stage2_{crop}")
-        if crop == "corn":
-            label_dirs = ["healthy", "northern_leaf_blight", "common_rust"]
+        if crop == "tomato":
+            label_dirs = [
+                "bacterial_spot", "early_blight", "healthy", "late_blight",
+                "leaf_mold", "septoria_leaf_spot", "spider_mites",
+                "target_spot", "tomato_mosaic_virus", "tomato_yellow_leaf_curl_virus",
+            ]
+        elif crop == "corn":
+            label_dirs = ["common_rust", "gray_leaf_spot", "healthy", "northern_leaf_blight"]
         else:
-            label_dirs = ["healthy", "early_blight", "late_blight"]
+            label_dirs = ["early_blight", "healthy", "late_blight"]
 
         for split in ["train", "val"]:
             for label_dir in label_dirs:

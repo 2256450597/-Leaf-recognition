@@ -19,7 +19,7 @@ def train_one(config):
     model = YOLO("yolov8n-cls.pt")
     results = model.train(
         data=config["data"],
-        epochs=50,
+        epochs=25,
         imgsz=224,
         batch=32,
         lr0=1e-3,

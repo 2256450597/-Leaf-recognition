@@ -15,17 +15,29 @@ CROP_KEY_MAP = {0: "corn", 1: "potato", 2: "tomato"}  # YOLO 按字母顺序：c
 
 # Stage 2: 病害分类（按作物分组）
 DISEASE_CLASSES = {
-    "tomato":  ["healthy", "early_blight", "late_blight"],
-    "corn":    ["healthy", "northern_leaf_blight", "common_rust"],
-    "potato":  ["healthy", "early_blight", "late_blight"],
+    "tomato":  [
+        "bacterial_spot", "early_blight", "healthy", "late_blight",
+        "leaf_mold", "septoria_leaf_spot", "spider_mites",
+        "target_spot", "tomato_mosaic_virus", "tomato_yellow_leaf_curl_virus",
+    ],
+    "corn":    ["common_rust", "gray_leaf_spot", "healthy", "northern_leaf_blight"],
+    "potato":  ["early_blight", "healthy", "late_blight"],
 }
 
 DISEASE_LABELS = {
     "healthy":              "健康",
+    "bacterial_spot":       "细菌性斑点病",
     "early_blight":         "早疫病",
     "late_blight":          "晚疫病",
-    "northern_leaf_blight": "北方叶枯病",
+    "leaf_mold":            "叶霉病",
+    "septoria_leaf_spot":   "斑枯病",
+    "spider_mites":         "红蜘蛛",
+    "target_spot":          "靶斑病",
+    "tomato_mosaic_virus":  "花叶病毒病",
+    "tomato_yellow_leaf_curl_virus": "黄化曲叶病毒病",
     "common_rust":          "普通锈病",
+    "gray_leaf_spot":       "灰斑病",
+    "northern_leaf_blight": "北方叶枯病",
 }
 
 # 模型权重路径

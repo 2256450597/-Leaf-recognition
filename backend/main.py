@@ -32,7 +32,7 @@ history: list[dict] = []
 @app.on_event("startup")
 async def startup():
     pipeline.load_models()
-    print("[API] All 4 models loaded.")
+    print("[API] All 4 models loaded (17 disease classes supported).")
 
 
 @app.post("/api/predict")
